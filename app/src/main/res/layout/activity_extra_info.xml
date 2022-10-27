@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".ExtraInfoActivity"
     android:background="#FCF17E">
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imageView6"
         android:layout_width="350dp"
         android:layout_height="450dp"
         android:layout_marginTop="100dp"
@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imageView5"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:src="@drawable/deulline_remove"
@@ -47,16 +47,14 @@
         android:layout_marginBottom="15dp"
         android:layout_marginRight="30dp"/>
 
+
     <TextView
         android:id="@+id/keyword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="키워드"
+        android:hint="추가정보"
         android:textSize="100dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        android:layout_marginTop="20dp"/>
-
-
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 </androidx.constraintlayout.widget.ConstraintLayout>

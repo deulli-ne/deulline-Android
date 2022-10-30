@@ -13,8 +13,8 @@ interface RetrofitService {
     @GET("/extra/{productId}")
     fun getExtraInfo(@Path("productId") productId : Long) : Call<ApiResponse<ExtraInfoVO>>
 
-    @GET("/product/{productId}")
-    fun getProductInfo(@Path("productId") productId : Long) : Call<ApiResponse<ProductInfoVO>>
+    @GET("/product/{category}")
+    fun getProductInfo(@Path("category") category : String) : Call<ApiResponse<ProductInfoVO>>
 
     @GET("/additional/{productId}")
     fun getAdditionalInfo(@Path("productId") productId: Long) : Call<ApiResponse<AdditionalInfoVO>>

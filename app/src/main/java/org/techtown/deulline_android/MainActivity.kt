@@ -28,15 +28,15 @@ class MainActivity : AppCompatActivity() {
 
 
         //상품 음성 입력(STT)
-
-
+        var tv = "tv"
 
 
         //서버 연결
         initRetrofit()
 
+
         //통신 (상품 기본정보)
-        getBasicInformation()
+        getBasicInformation(tv)
 
         //화면 열결
         val homeBtn = findViewById<ImageView>(R.id.home)
@@ -52,10 +52,10 @@ class MainActivity : AppCompatActivity() {
         retrofitService = retrofit.create(RetrofitService::class.java)
     }
 
+
     //통신: 상품 기본정보 가져오기
-    //getProductInfo()의 매개변수 productId 갱신 필요, 2는 임의 값
-    fun getBasicInformation() {
-        retrofitService.getProductInfo(2)?.enqueue(object : Callback<ApiResponse<ProductInfoVO>> {
+    fun getBasicInformation(category : String) {
+        retrofitService.getProductInfo(category)?.enqueue(object : Callback<ApiResponse<ProductInfoVO>> {
             override fun onResponse(call: Call<ApiResponse<ProductInfoVO>>, response: Response<ApiResponse<ProductInfoVO>>) {
                 if(response.isSuccessful) {
                     //정상적으로 통신 성공

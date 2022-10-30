@@ -1,5 +1,6 @@
 package org.techtown.deulline_android.network
 
+import org.techtown.deulline_android.network.dto.AdditionalInfoVO
 import org.techtown.deulline_android.network.dto.ApiResponse
 import retrofit2.Call
 import org.techtown.deulline_android.network.dto.ExtraInfoVO
@@ -15,5 +16,6 @@ interface RetrofitService {
     @GET("/product/{productId}")
     fun getProductInfo(@Path("productId") productId : Long) : Call<ApiResponse<ProductInfoVO>>
 
-
+    @GET("/additional/{productId}")
+    fun getAdditionalInfo(@Path("productId") productId: Long) : Call<ApiResponse<AdditionalInfoVO>>
 }

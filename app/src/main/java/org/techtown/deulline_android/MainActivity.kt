@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.gson.annotations.SerializedName
 import org.techtown.deulline_android.network.RetofitClient
 import org.techtown.deulline_android.network.RetrofitService
+import org.techtown.deulline_android.network.dto.AdditionalInfoVO
 import org.techtown.deulline_android.network.dto.ApiResponse
 import org.techtown.deulline_android.network.dto.ExtraInfoVO
 import org.techtown.deulline_android.network.dto.ProductInfoVO
@@ -82,6 +83,7 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
-
     }
+
+
 }

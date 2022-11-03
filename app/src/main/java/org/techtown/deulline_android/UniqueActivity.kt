@@ -3,7 +3,10 @@ package org.techtown.deulline_android
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
+import android.widget.Button
 import android.widget.ImageView
 import org.techtown.deulline_android.network.RetofitClient
 import org.techtown.deulline_android.network.RetrofitService
@@ -17,16 +20,34 @@ import retrofit2.Retrofit
 class UniqueActivity : AppCompatActivity() {
     private lateinit var retrofit: Retrofit
     private lateinit var retrofitService : RetrofitService
+    private lateinit var mNaverTTSTask : NaverTTSTask
+    private lateinit var mTextString : Array<String>
+    private lateinit var additionalInfo : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_unique_acrivity)
+        setContentView(R.layout.activity_unique)
 
         //서버 연결
         initRetrofit()
 
         //통신 (상품 기본정보)
         getAdditionalInformation()
+
+        //TTS
+        val button = findViewById<Button>(R.id.button)
+        button.setOnClickListener{
+            mTextString = arrayOf("특이사항 입니다. " + additionalInfo + "입니다. ")
+            mNaverTTSTask = NaverTTSTask(mTextString)
+            //mNaverTTSTask.execute(mTextString)    //안됨
+            mNaverTTSTask.execute(arrayOf("특이사항 입니다. " + additionalInfo + "입니다. "))
+
+            //7초뒤 화면전환
+            Handler(Looper.getMainLooper()).postDelayed({
+                val intent = Intent(this, ExtraInfoActivity::class.java)
+                startActivity(intent)
+            }, 5000)
+        }
 
         //화면 연결
         val backBtn = findViewById<ImageView>(R.id.back)
@@ -61,8 +82,7 @@ class UniqueActivity : AppCompatActivity() {
 
                     Log.d("AdditionalInfoVO", "onresponse 성공: "+ result?.toString())
                     Log.d("AdditionalInfoVO", "data : "+ data?.toString())
-                    Log.d("AdditionalInfoVO", "productId : "+ data?.productId.toString())
-                    Log.d("AdditionalInfoVO", "additionalData : "+ data?.additionalData.toString())
+                    additionalInfo = data?.additionalData.toString()
 
 
                 } else {

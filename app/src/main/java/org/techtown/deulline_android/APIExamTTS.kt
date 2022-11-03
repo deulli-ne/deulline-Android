@@ -41,11 +41,11 @@ class APIExamTTS {
             con.setRequestProperty("X-NCP-APIGW-API-KEY", clientSecret)
 
             // post request
-            val postParams = "speaker=nara&speed=0&format=mp3&text=$text"
+            val postParams = "speaker=nara&speed=0&format=mp3&volume=5&text=$text"
             con.setDoOutput(true)
             con.setDoInput(true)
 
-            val wr = DataOutputStream(con.getOutputStream()) ///여기서 에러 난다?
+            val wr = DataOutputStream(con.getOutputStream())
             Log.d("TTS", wr.toString())
 
             wr.writeBytes(postParams)

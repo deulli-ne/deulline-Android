@@ -75,7 +75,7 @@ class MainActivity : AppCompatActivity() {
         //TTS
         val button = findViewById<Button>(R.id.button)
         button.setOnClickListener {
-            if (textView.text.toString() == "둘리야") {
+            if (textView.text.toString() == "둘리야" || textView.text.toString() == "들리야") {
                 //TTS
                 mTextString = arrayOf( "안녕하세요 나만의 쇼핑 도우미 들리네입니다. 검색을 원하시는 상품 카테고리를 알려주세요")
                 mNaverTTSTask = NaverTTSTask(mTextString)

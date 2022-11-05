@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
         initRetrofit()
 
         //상품 음성 입력(STT)
-        var tv = "tv"
+        var category = "refrigerator"
 
 
         //STT
@@ -81,12 +81,12 @@ class MainActivity : AppCompatActivity() {
                 mNaverTTSTask = NaverTTSTask(mTextString)
                 mNaverTTSTask.execute(arrayOf("안녕하세요 나만의 쇼핑 도우미 들리네입니다. 검색을 원하시는 상품 카테고리를 알려주세요" ) )
 
-            } else if (textView.text.toString() == "TV 보여 줘") {
+            } else if (textView.text.toString() == "냉장고 보여 줘") {
                 //TTS
                 mTextString =
-                    arrayOf("TV 정보를 가져오는 중입니다. 상위 랭킹 1위 검색 결과를 출력하겠습니다. 이전 단계로 돌아가시려면 돌아가기를 말씀해주세요")
+                    arrayOf("냉장고 정보를 가져오는 중입니다. 상위 랭킹 1위 검색 결과를 출력하겠습니다. 이전 단계로 돌아가시려면 돌아가기를 말씀해주세요")
                 mNaverTTSTask = NaverTTSTask(mTextString)
-                mNaverTTSTask.execute(arrayOf("TV 정보를 가져오는 중입니다. 상위 랭킹 1위 검색 결과를 출력하겠습니다. 이전 단계로 돌아가시려면 돌아가기를 말씀해주세요"))
+                mNaverTTSTask.execute(arrayOf("냉장고 정보를 가져오는 중입니다. 상위 랭킹 1위 검색 결과를 출력하겠습니다. 이전 단계로 돌아가시려면 돌아가기를 말씀해주세요"))
 
                 //TTS
                 Handler().postDelayed({
@@ -98,7 +98,7 @@ class MainActivity : AppCompatActivity() {
 
 
                 //통신 (상품 기본정보)
-                getBasicInformation(tv)
+                getBasicInformation(category)
 
                 Handler().postDelayed({
                     mTextString = arrayOf(

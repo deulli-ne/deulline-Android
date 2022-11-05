@@ -126,7 +126,7 @@ class ExtraInfoActivity : AppCompatActivity() {
     //통신: 상품 기본정보 가져오기
     //getExtraInfo()의 매개변수 productId 갱신 필요, 3는 임의 값
     fun getDetailInformation() {
-        retrofitService.getExtraInfo(1)?.enqueue(object : Callback<ApiResponse<ExtraInfoVO>> {
+        retrofitService.getExtraInfo(6)?.enqueue(object : Callback<ApiResponse<ExtraInfoVO>> {
             override fun onResponse(call: Call<ApiResponse<ExtraInfoVO>>, response: Response<ApiResponse<ExtraInfoVO>>) {
                 if(response.isSuccessful) {
                     //정상적으로 통신 성공

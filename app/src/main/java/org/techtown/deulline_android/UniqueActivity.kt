@@ -123,7 +123,7 @@ class UniqueActivity : AppCompatActivity() {
 
     //통신: 상품 특이정보 가져오기
     fun getAdditionalInformation() {
-        retrofitService.getAdditionalInfo(1)?.enqueue(object :
+        retrofitService.getAdditionalInfo(6)?.enqueue(object :
             Callback<ApiResponse<AdditionalInfoVO>> {
             override fun onResponse(call: Call<ApiResponse<AdditionalInfoVO>>, response: Response<ApiResponse<AdditionalInfoVO>>) {
                 if(response.isSuccessful) {

@@ -2,7 +2,6 @@ package org.techtown.deulline_android.network.dto
 
 import com.google.gson.annotations.SerializedName
 
-// https://minchanyoun.tistory.com/44
 class ApiResponse<T> {
 
     @SerializedName("statusCode")

@@ -51,7 +51,8 @@
         android:id="@+id/keyword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="특이사항"
+        android:text="특이사항"
+        android:textColor="@color/black"
         android:textSize="100dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -60,9 +61,10 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TTS 작동 확인"
+        android:layout_width="148dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="292dp"
+        android:background="#00ff0000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -82,13 +84,12 @@
         android:id="@+id/STTButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="152dp"
+        android:layout_marginTop="112dp"
         android:text="음성인식"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/keyword" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
